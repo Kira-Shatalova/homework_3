@@ -1,0 +1,401 @@
+header {
+    background-color: #2c3e50; /* Фоновий колір */
+    color: #ffffff;            /* Колір тексту */
+    padding: 20px 40px;        /* Внутрішні відступи */
+    display: flex;
+    align-items: center;
+    
+}
+
+header h1 {
+            margin: 0;
+            flex: 1;                   /* Займає вільний простір зліва */
+        }
+
+        nav {
+            flex: 2;                   /* Отримує більше простору */
+            display: flex;
+            justify-content: center;   /* Вирівнює список посилань РІВНО ПО ЦЕНТРУ */
+        }
+/* 2. Стилі для списку навігації (вибудовуємо в рядок) */
+nav ul {
+   
+    list-style: none;          /* Прибираємо крапки */
+            margin: 0;
+            padding: 0;
+            display: flex;             /* Робимо посилання в один рядок */
+            gap: 25px;
+}
+
+/* 3. Стилі для посилань */
+nav a {
+    color: #ffffff;          /* Колір посилань */
+    text-decoration: none;   /* Прибираємо підкреслення */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Ефект при наведенні курсора */
+nav a:hover {
+    color: #f39c12;          /* Акцентний колір при наведенні */
+}
+
+/* Базові відступи для прикладу */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Стилізація секції "Про мене" */
+        section {
+            padding: 60px 20px; /* Внутрішні відступи секції зверху/знизу та з боків */
+        }
+
+        /* Контейнер для фото та тексту */
+        .about-container {
+            max-width: 1000px;        /* Максимальна ширина контенту */
+            margin: 0 auto;           /* Вирівнюємо весь блок по центру */
+            padding: 30px;            /* Додатковий padding всередині контейнера */
+            background-color: #fff;   /* Білий фони для огартності (за бажанням) */
+            border-radius: 16px;      /* Заокруглення самого контейнера */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Легка тінь */
+            
+            display: flex;            /* Робимо фото і текст в один рядок */
+            align-items: center;      /* Вирівнюємо по вертикалі по центру */
+            gap: 40px;                /* Відстань між фото і текстом */
+        }
+
+        /* Блок з фотографією */
+        .about-photo {
+            flex-shrink: 0;           /* Забороняємо фото стискатися */
+        }
+
+        .about-photo img {
+            width: 320px;             /* Фіксована ширина фото */
+            height: 400px;            /* Висота (щоб було акуратне співвідношення сторін) */
+            object-fit: cover;        /* Кадрує картинку, щоб вона не сплющувалась */
+            border-radius: 12px;      /* Заокруглення кутів фото */
+        }
+
+        /* Текстовий блок */
+        .about-taxt {
+            flex: 1;                  /* Текст займає весь решту вільного простору */
+        }
+
+        .about-taxt h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-taxt p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /*секции*/
+
+        /* Загальний контейнер секції */
+        .hobbies-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .hobbies-container h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        /* Стилізація самого списку */
+        .hobbies-container ul {
+            /* Змінюємо стандартні кружечки на стильні зірочки (або емодзі) */
+            list-style-type: "✦ "; 
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        /* Стилізація окремих пунктів списку */
+        .hobbies-container li {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #444444;
+            
+            /* Внутрішні та зовнішні відступи */
+            margin-bottom: 16px;        /* Відступ МІЖ пунктами */
+            padding: 12px 16px;         /* Відступи всередині плашки */
+            border-radius: 8px;         /* Скруглення кутів */
+            
+            /* Плавність для анімації при наведенні */
+            transition: all 0.3s ease;
+        }
+
+        /* Прибираємо нижній відступ у останнього елемента */
+        .hobbies-container li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Виділення заголовка хобі */
+        .hobbies-container li strong {
+            color: #2c3e50;
+            transition: color 0.3s ease;
+        }
+
+        /* Ефект при наведенні (:hover) */
+        .hobbies-container li:hover {
+            color: #16a085;             /* Зміна кольору тексту при наведенні */
+            background-color: #f0fdf4;  /* Легкий фоновий підсвічувач */
+            transform: translateX(6px); /* Легкий зсув вправо для інтерактивності */
+            cursor: pointer;
+        }
+
+        .hobbies-container li:hover strong {
+            color: #117a65;             /* Зміна кольору жирного тексту при наведенні */
+        }
+
+        /*ГАЛЕРЕЯ */
+       .gallery {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .gallery p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Контейнер для фото (Flexbox) */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px; /* Сучасний аналог margin між карточками */
+        }
+
+        /* Карточка з картиною (<figure>) */
+        .gallery-container figure {
+            margin: 10px; /* Завдання вимагає margin між фото */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 15px; /* Внутрішній відступ для всієї картки */
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Стилізація самих зображень (Паспарту) */
+        .gallery-container img {
+            width: 280px;            /* Однакова ширина для всіх зображень */
+            height: 200px;           /* Фіксована висота для однакового розміру */
+            object-fit: cover;       /* Кадрування без спотворення пропорцій */
+            
+            /* Ефект паспарту (рамки): */
+            padding: 10px;           /* Відступ між картинкою і рамкою */
+            background-color: #fff;  /* Біле поле паспарту */
+            border: 2px solid #ddd;  /* Зовнішня рамка */
+            border-radius: 4px;
+            
+            box-sizing: border-box;  /* Включає padding і border у загальну ширину 280px */
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Ефект при наведенні мишкою */
+        .gallery-container figure:hover img {
+            transform: scale(1.03);  /* Легке збільшення */
+            border-color: #f39c12;   /* Зміна кольору рамки */
+        }
+
+        /* Підпис до фото */
+        figcaption {
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /*коетент */
+        /* Контейнер секції "Контакти" */
+        .contacts-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contacts-container h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contacts-container p {
+            color: #666666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Група полів форми */
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Стилізація підписів (label) */
+        .form-group label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* Стилізація полів введення (input, textarea) */
+        .form-group input,
+        .form-group textarea {
+            width: 100%;             /* Ширина на всю доступну ширину контейнера */
+            padding: 12px 16px;      /* Внутрішні відступи для зручного введення */
+            border: 1px solid #ccc;  /* Рамка */
+            border-radius: 8px;      /* Заокруглення кутів */
+            font-size: 16px;
+            color: #333333;
+            box-sizing: border-box;  /*Включає padding і border в загальну ширину 100% */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Ефект підсвічування при фокусі на полі */
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2c3e50;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.15);
+        }
+
+        /* Забороняємо змінювати ширину текстового поля, залишаючи можливість змінювати висоту */
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        /* Стилізація кнопки */
+        button[type="submit"] {
+            width: 100%;             /* Кнопка на всю ширину форми */
+            background-color: #2c3e50; /* Фоновий колір */
+            color: #ffffff;          /* Колір тексту */
+            padding: 14px 20px;      /* Внутрішні відступи */
+            border: none;            /* Прибираємо стандартну рамку кнопки */
+            border-radius: 8px;      /* Заокруглення кутів */
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;         /* Вказівник миші у вигляді рукавички */
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        /* Ефект при наведенні на кнопку (:hover) */
+        button[type="submit"]:hover {
+            background-color: #f39c12; /* Зміна фонового кольору при наведенні */
+        }
+
+        /* Легкий ефект натискання */
+        button[type="submit"]:active {
+            transform: scale(0.99);
+        }
+
+        /*footer*/
+
+        footer {
+            background-color: #2c3e50; /* Фоновий колір */
+            color: #ffffff;            /* Колір основного тексту */
+            padding: 40px 20px;        /* Внутрішні відступи (згори/знизу 40px, з боків 20px) */
+            text-align: center;        /* Вирівнювання всього тексту по центру */
+            margin-top: 50px;
+        }
+
+        /* Контейнер для обмеження ширини */
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Прибираємо курсив у тега address */
+        footer address {
+            font-style: normal;
+            margin-bottom: 20px;
+        }
+
+        footer address p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        /* Блок соцмереж */
+        .social-links {
+            margin-bottom: 25px;
+        }
+
+        .social-links p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Загальна стилізація ВСІХ посилань у футері */
+        footer a {
+            color: #f39c12;            /* Яскравий та контрастний колір посилань */
+            text-decoration: none;     /* Прибираємо стандартне підкреслення */
+            font-weight: bold;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        /* Стилізація конкретно посилань на соцмережі */
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;            /* Відступи між посиланнями соцмереж */
+            padding: 6px 14px;
+            border: 1px solid #f39c12; /* Акуратна рамка навколо кнопок соцмереж */
+            border-radius: 6px;
+        }
+
+        /* Ефект :hover при наведенні мишкою на посилання */
+        footer a:hover {
+            color: #ffffff;            /* Колір змінюється на білий */
+            text-decoration: underline;/* З'являється підкреслення */
+        }
+
+        .social-links a:hover {
+            background-color: #f39c12; /* Кнопки соцмереж зафарбовуються при наведенні */
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        /* Текст про захист прав */
+        .copyright {
+            font-size: 14px;
+            color: #bdc3c7;            /* Трохи м'якший сірий колір для копирайту */
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+ <h1>Kira</h1> 
+
+ <nav>
+    <ul>
+        <li><a href=#>Про мене </a></li>
+        <li><a href="#hobbies">Хобі</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+    </ul>
+ </nav> 
+    </header>
+ <main>
+    <section>
+      <div class="about-container">
+        <div class="about-photo">
+            <img src="img/girl.jpg"alt=" girl">
+
+        </div>
+        <div class="about-taxt">
+            <h2>Про меня</h2>
+            <p>
+                Привіт! Мене звати Кіра, і я починаючий веб-розробник. 
+                Мене захоплює процес створення сучасних, зручних та красивих веб-сайтів.
+            </p>
+
+            <p>
+                Наразі я активно вивчаю HTML, CSS та JavaScript, а також розбираюся з базами даних 
+                та інструментами розробки. Мій мета — стати висококласним Full-Stack фахівцем.
+            </p>
+            
+            <p>
+                У вільний час я люблю читати технічну літературу, займатися спортом та подорожувати, 
+                що допомагає мені знаходити нові ідеї та натхнення для проєктів.
+            </p>
+        </div>
+      </div>  
+    </section>
+
+    <section class ="hobbies">
+    <div class="hobbies-container">
+        <h2>Мої хобі та захоплення</h2>
+        
+        <ul>
+            <li>
+                <strong>Програмування:</strong> люблю створювати сайти, розбиратися у веброзробці та втілювати ідеї в код.
+            </li>
+            <li>
+                <strong>Танці:</strong> чудовий спосіб відчути ритм, виплеснути емоції та тримати тіло в тонусі.
+            </li>
+            <li>
+                <strong>Написання віршів:</strong> творче захоплення, де я висловлюю свої думки та почуття у римованих рядках.
+            </li>
+            <li>
+                <strong>Читання поезії:</strong> шукаю натхнення у творах відомих авторів. 
+            <li>
+                <strong>Слухання музики:</strong> вона завжди поруч — і під час написання коду, і під час вигадування нових віршів чи танцювальних рухів.
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="gallery">
+    <h2>Галерея моїх робіт</h2>
+    <p>Тут представлені деякі з моїх проєктів та досягнень.</p>
+
+    <div class="gallery-container">
+
+        <figure>
+            <img src="img/travel.jpg" 
+                 alt="Скріншот мого першого вебсайту про подорожі" 
+                 title="Вебсайт про подорожі - мій перший проєкт">
+            <figcaption>Вебсайт про подорожі</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/produt.jpg" 
+                 alt="Скріншот інтерфейсу мого мобільного додатку для нотаток" 
+                 title="Мобільний додаток 'Нотатки' - інтерфейс користувача">
+            <figcaption>Додаток 'Нотатки'</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/atosphere.jpg" 
+                 alt="Скріншот сторінки мого інтернет-магазину з товарами" 
+                 title="Інтернет-магазин - сторінка товарів">
+            <figcaption>Інтернет-магазин</figcaption>
+        </figure>
+    </div>
+</section>
+
+        <section id="contacts">
+        <div class="contacts-container">
+            <h2>Контакти</h2>
+            <p>Зв'яжіться зі мною за допомогою форми нижче або через соцмережі.</p>
+
+          
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" name="name" required placeholder="Ваше ім'я">
+                </div>
+<div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Напишіть своє повідомлення..."></textarea>
+                </div>
+
+                <button type="submit">Надіслати</button>
+            </form>
+        </div>
+
+        </section>
+
+        <footer>
+        <div class="footer-container">
+        
+            <address>
+                <p>Електронна пошта: <a href="Kira.shatalovaa@gmail.com">Kira.shatalovaa@gmail.com</a></p>
+                <p>Телефон: <a href="tel:+380662396049">+380 (66) 239-60-49</a></p>
+            </address>
+
+          
+          <div class="social-links">
+                <p>Мої соцмережі:</p>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> 
+                <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </div>
+            <p class="copyright">&copy; 2026 Shatalova Kira. Усі права захищено.</p>
+        </div>
+ </main>
+</footer>
+</body>
+</html>
