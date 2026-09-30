@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root{
     --bg:#FAF6FO;
     --bg-alt:#F3EDE4;
@@ -11,5 +17,104 @@
     --action:#A8432A;
     --accent-light:#E08A6B;
     --line:#E5DCCF;
-
+    --manrope: "Manrope", Arial, sans-serif;
+    --radius: 4px;
+    --padding: 96px 80px;
+    --playfair: "Playfair+Display", sans-serif;
+    --max-width: 1120px;
 }
+
+body {
+  font-family: var(--manrope), sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.hobbies h2,
+.gallery h2,
+#contacts h2{
+    font-family: var(--playfair), sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 24px;
+}
+
+.about-container {
+    max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding); 
+  background-color: var(--bg); 
+  font-family: 'Manrope', sans-serif;
+}
+
+.about-text h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.about-photo {
+  display: inline-block;
+  width: 38%;
+position: relative;
+margin-bottom: 20px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px; 
+  display: block;
+}
+
+
+.about-text h2::before,
+ .hobbies h2::before,
+.gallery h2::before,
+#contacts h2::before 
+{
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--action);
+  margin-right: 18px;
+}
+
+
+
+.about_me {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.action_button{
+    background-color: var(--accent);
+    height: 50px;
+    width: 300px;
+    font-family: var(--manrope);
+    color: var(--surface);
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius);
+}
+
+.action_button:hover{
+    background-color: var(--action);
+}
+
+.hobbies-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
