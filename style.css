@@ -5,7 +5,7 @@
 }
 
 :root{
-    --bg:#FAF6FO;
+    --bg: #FAF6FO;
     --bg-alt:#F3EDE4;
     --surface:#FFFFFF;
     --placeholder:#EDE4D7;
@@ -43,7 +43,6 @@ body {
 .about-container {
     max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--padding); 
   background-color: var(--bg); 
   font-family: 'Manrope', sans-serif;
 }
@@ -99,7 +98,7 @@ margin-bottom: 20px;
 .action_button{
     background-color: var(--accent);
     height: 50px;
-    width: 300px;
+    width: 100%;
     font-family: var(--manrope);
     color: var(--surface);
     font-size: 24px;
@@ -118,3 +117,9 @@ margin-bottom: 20px;
   padding: 0 20px;
 }
 
+.about,
+.hobbies,
+.gallery,
+.contacts{
+    margin: 0 auto;
+}
