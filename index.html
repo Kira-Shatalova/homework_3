@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&family=PlayfairDisplay:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
@@ -21,14 +21,15 @@
       </nav>
     </header>
     <main>
-      <section class="about">
+      <section class="about" id="about">
         <div class="about-container">
           <div class="about-photo">
-            <img src="img/girl.jpg" alt=" girl" />
+            <div class="photo-frame"></div>
+            <img src="img/Kira 2025.jpg" alt=" girl" />
           </div>
           <div class="about-text">
             <h2>Про меня</h2>
-            <p class="about_me">
+            <p class="about_name">
               Привіт! Мене звати Кіра, і я починаючий веб-розробник. Мене
               захоплює процес створення сучасних, зручних та красивих
               веб-сайтів.
@@ -46,34 +47,34 @@
               натхнення для проєктів.
             </p>
           </div>
-          <button class="action_button" type="submit">Надіслати мені</button>
+          <button class="action_button" >Надіслати мені</button>
         </div>
       </section>
 
-      <section class="hobbies">
+      <section class="hobbies" id="hobbies">
         <div class="hobbies-container">
           <h2>Мої хобі та захоплення</h2>
 
-          <ul>
-            <li>
-              <strong>Програмування:</strong> люблю створювати сайти,
+          <ul class="programmer">
+            <li class="list-auto">
+              <strong><span class="num">01</span>Програмування:</strong> люблю створювати сайти,
               розбиратися у веброзробці та втілювати ідеї в код.
             </li>
-            <li>
-              <strong>Танці:</strong> чудовий спосіб відчути ритм, виплеснути
+            <li class=" list-auto">
+              <strong><span class="num">02</span>Танці:</strong> чудовий спосіб відчути ритм, виплеснути
               емоції та тримати тіло в тонусі.
             </li>
-            <li>
-              <strong>Написання віршів:</strong> творче захоплення, де я
+            <li class=" list-auto">
+              <strong><span class="num">03</span>Написання віршів:</strong> творче захоплення, де я
               висловлюю свої думки та почуття у римованих рядках.
             </li>
-            <li>
-              <strong>Читання поезії:</strong> шукаю натхнення у творах відомих
+            <li class=" list-auto" >
+              <strong><span class="num">04</span>Читання поезії:</strong> шукаю натхнення у творах відомих
               авторів.
             </li>
 
-            <li>
-              <strong>Слухання музики:</strong> вона завжди поруч — і під час
+            <li class=" list-auto">
+              <strong><span class="num">05</span>Слухання музики:</strong> вона завжди поруч — і під час
               написання коду, і під час вигадування нових віршів чи танцювальних
               рухів.
             </li>
@@ -81,35 +82,36 @@
         </div>
       </section>
 
-      <section class="gallery">
-        <h2>Галерея моїх робіт</h2>
-        <p>Тут представлені деякі з моїх проєктів та досягнень.</p>
-
+      <section class="gallery" id="gallery">
+        
         <div class="gallery-container">
-          <figure>
-           <!-- <img
+        <h2>Галерея моїх робіт</h2>
+        <p class="gallery-p"> Тут представлені деякі з моїх проєктів та досягнень.</p>
+
+          <figure class="gallery-card">
+         <img class="gallery-img"
               src="img/travel.jpg"
               alt="Скріншот мого першого вебсайту про подорожі"
               title="Вебсайт про подорожі - мій перший проєкт"
-            />-->
+            />
             <figcaption>Вебсайт про подорожі</figcaption>
           </figure>
 
-          <figure>
-           <!-- <img
+          <figure class="gallery-card">
+          <img class="gallery-img"
               src="img/produt.jpg"
               alt="Скріншот інтерфейсу мого мобільного додатку для нотаток"
               title="Мобільний додаток 'Нотатки' - інтерфейс користувача"
-            />-->
+            />
             <figcaption>Додаток 'Нотатки'</figcaption>
           </figure>
 
-          <figure>
-          <!-- <img
+          <figure class="gallery-card">
+          <img class="gallery-img"
               src="img/atosphere.jpg"
               alt="Скріншот сторінки мого інтернет-магазину з товарами"
               title="Інтернет-магазин - сторінка товарів"
-            />-->
+            />
             <figcaption>Інтернет-магазин</figcaption>
           </figure>
         </div>
@@ -118,7 +120,7 @@
       <section  class="contacts" id="contacts ">
         <div class="contacts-container">
           <h2>Контакти</h2>
-          <p>
+          <p class="list">
             Зв'яжіться зі мною за допомогою форми нижче або через соцмережі.
           </p>
 
@@ -160,31 +162,25 @@
         </div>
       </section>
     </main>
-
-    <footer>
-      <div class="footer-container">
-        <address>
-          <p>
-            Електронна пошта:
-            <a href="Kira.shatalovaa@gmail.com">Kira.shatalovaa@gmail.com</a>
-          </p>
-          <p>Телефон: <a href="tel:+380662396049">+380 (66) 239-60-49</a></p>
-        </address>
-
-        <div class="social-links">
-          <p>Мої соцмережі:</p>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            href="https://telegram.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Telegram</a
-          >
-        </div>
-        <p class="copyright">&copy; 2026 Shatalova Kira. Усі права захищено.</p>
+<footer class="footer">
+  <div class="footer-container">
+    <h2 class="footer-title">Kira Shatalova</h2>
+    <address class="footer-contacts">
+      <div class="contact-card">
+        <a href="mailto:Kira.shatalovaa@gmail.com" class="footer-link">Kira.shatalovaa@gmail.com</a>
       </div>
-    </footer>
+      <div class="contact-card">
+        <a href="tel:+380662396049" class="footer-link">+380 (66) 239-60-49</a>
+      </div>
+    </address>
+
+    <div class="social-links">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+      <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-btn">Telegram</a>
+    </div>
+
+    <p class="copyright">&copy; 2026 Shatalova Kira. Усі права захищено.</p>
+  </div>
+</footer>
   </body>
 </html>

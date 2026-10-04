@@ -5,9 +5,9 @@
 }
 
 :root{
-    --bg: #FAF6FO;
-    --bg-alt:#F3EDE4;
-    --surface:#FFFFFF;
+   --bg: #faf6f0;
+   --bg-alt:#F3EDE4;
+   --surface:#FFFFFF;
     --placeholder:#EDE4D7;
     --ink:#1F1B18;
     --ink-soft:#2A2521;
@@ -17,6 +17,7 @@
     --action:#A8432A;
     --accent-light:#E08A6B;
     --line:#E5DCCF;
+
     --manrope: "Manrope", Arial, sans-serif;
     --radius: 4px;
     --padding: 96px 80px;
@@ -33,15 +34,15 @@ body {
 .hobbies h2,
 .gallery h2,
 #contacts h2{
-    font-family: var(--playfair), sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 24px;
+  font-family: var(--playfair), sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
 }
 
 .about-container {
-    max-width: var(--max-width);
+  max-width: var(--max-width);
   margin: 0 auto;
   background-color: var(--bg); 
   font-family: 'Manrope', sans-serif;
@@ -49,30 +50,51 @@ body {
 
 .about-text h2 {
   font-family: 'Manrope', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
+.about_name{
+ color: var(--ink);
+ font-size: 23px;
+ font-weight: 700;
+}
+
 .about-photo {
-  display: inline-block;
-  width: 38%;
-position: relative;
-margin-bottom: 20px;
+ position: relative;
+ display: inline-block;
+ width: 38%;
+ margin-bottom: 20px;
+
 }
 
 .about-photo img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px; 
-  display: block;
+ position: relative;
+ z-index: 2;
+ display: block;
+ width: 100%;
+ height: 100%;
+ border-radius: 9px;
+  
 }
 
+.photo-frame {
+ position: absolute;
+ top: 15px;
+ left: 15px;
+ bottom: 0;
+ right: 0;
+ border: 2px solid var(--action);
+ border-radius: 9px;
+ box-sizing: border-box;
+ z-index: 1;
+}
 
 .about-text h2::before,
- .hobbies h2::before,
+.hobbies h2::before,
 .gallery h2::before,
 #contacts h2::before 
 {
@@ -82,9 +104,11 @@ margin-bottom: 20px;
   height: 2px;
   background-color: var(--action);
   margin-right: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  
 }
-
-
 
 .about_me {
   font-family: 'Manrope', sans-serif;
@@ -96,30 +120,231 @@ margin-bottom: 20px;
 }
 
 .action_button{
-    background-color: var(--accent);
-    height: 50px;
-    width: 100%;
-    font-family: var(--manrope);
-    color: var(--surface);
-    font-size: 24px;
-    font-weight: 700;
-    border: none;
-    border-radius: var(--radius);
+  background-color: var(--accent);
+  height: 50px;
+  width: 100%;
+  font-family: var(--manrope);
+  color: var(--surface);
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius);
 }
 
 .action_button:hover{
-    background-color: var(--action);
+ background-color: var(--action);
 }
 
-.hobbies-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
+.hobbies-container,
+.gallery-container,
+.contacts-container {
+ max-width: var(--max-width);
+ margin: 0 auto;
+ padding: 0 20px;
 }
 
 .about,
 .hobbies,
 .gallery,
 .contacts{
-    margin: 0 auto;
+ margin: 0 auto;
+}
+
+.hobbies{
+  background-color: var(--ink);
+  color: var(--muted);
+  padding: 60px 20px;
+  box-sizing: border-box;
+
+}
+
+.hobbies-container{
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hobbies-container h2{
+  font-family: var(--playfair) serif;
+  font-size: 32px;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: var(--bg);
+}
+
+.programmer{
+ list-style: none;
+ padding: 0;
+ margin: 0;
+}
+
+.list-auto{
+  display: inline-block;
+  width: 100%;
+  margin-right: 3%;
+  margin-bottom: 20px;
+  padding: 24px;
+  background-color: var(--ink-soft);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
+  color:var(--muted);
+}
+
+.hobbies-container list-auto:last-child{
+  width: 100%;
+  margin-right: 0;
+}
+
+.hobbies-container list-auto::after{
+  content: "";
+  display: block;
+}
+
+.num{
+  color: var(--accent);
+  margin-right: 6px;
+}
+
+.gallery{
+  background-color: var(--bg-alt);
+  padding: 60px 20px;
+  color: var(--muted);
+  box-sizing: border-box;
+}
+
+.gallery-container{
+  max-width: 900px;
+  margin: 0 auto;
+  
+}
+
+.gallery-container h2{
+  font-family: var(--playfair) serif;
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  color: var(--accent);
+}
+
+.list{
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 35px 0;
+  line-height: 1.5;
+}
+
+.gallery-card{
+  display: inline-block;
+  width: 31%;
+  margin-right: 3%;
+  margin-bottom: 25px;
+  border-radius: 9px;
+  overflow: hidden;
+  background-color: var(--bg);
+  box-sizing: border-box;
+}
+
+.gallery-p{
+  font-size: 14px;
+  margin: 0 0 35px 0;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.gallery-card{
+  display: inline-block;
+  width:100%;
+  height: 3%;
+  margin-right: 3%;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  background-color: var(--bg-alt);
+}
+
+.gallery-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;     
+  display: block;
+}
+
+.gallery-card figcaption {
+  background-color: var(--bg);
+  padding: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color:var(--ink);
+  text-align: left;
+}
+
+.contacts{
+  background-color:var(--placeholder);
+}
+
+.footer {
+  background-color: var(--ink-soft); 
+  padding: 50px 20px 30px 20px;
+  color:var(--muted);
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-family:var(--playfair) serif;
+  font-size: 32px;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: var(--bg);
+}
+
+.footer-contacts {
+  font-style: normal;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  color:var(--accent);           
+  font-size: 18px;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.social-links {
+  margin-top: 20px;
+  margin-bottom: 35px;
+             
+}
+
+.social-btn {
+  display: inline-block;
+  width: 48%; 
+  padding: 16px 0;
+  background-color: var(--ink-soft); 
+  border: 1px solid var(--muted);
+  border-radius: 8px; 
+  color: var(--bg);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.copyright {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 30px;
 }
