@@ -21,7 +21,7 @@
     --manrope: "Manrope", Arial, sans-serif;
     --radius: 4px;
     --padding: 96px 80px;
-    --playfair: "Playfair+Display", sans-serif;
+    --playfair: "PlayfairDisplay", sans-serif;
     --max-width: 1120px;
 }
 
@@ -98,8 +98,7 @@ body {
 .about-text h2::before,
 .hobbies h2::before,
 .gallery h2::before,
-#contacts h2::before 
-{
+#contacts h2::before{
   content: "";
   display: inline-block;
   width: 20px;
