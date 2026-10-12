@@ -21,7 +21,7 @@
     --manrope: "Manrope", Arial, sans-serif;
     --radius: 4px;
     --padding: 96px 80px;
-    --playfair: "PlayfairDisplay", sans-serif;
+    --playfair: "Playfair Display", Georgia, serif;;
     --max-width: 1120px;
 }
 
@@ -47,10 +47,13 @@ header, nav ul, header h1 {
 }
 
 header {
+  position:sticky;
   background-color:var(--bg); 
   padding: 20px 40px;
   border-bottom: 1px solid var(--bg-alt);
   overflow: hidden; 
+  top: 0;
+
 }
 
 nav ul {
@@ -92,6 +95,7 @@ nav a.active::after {
   height: 2px;
   background-color:var(--accent); 
 }
+
 
 .about {
   width: 100%;
@@ -140,18 +144,17 @@ nav a.active::after {
   
 }
 
+
 .photo-frame {
- position: absolute;
- top: 15px;
- left: 15px;
- bottom: 0;
- right: 0;
- border: 2px solid var(--action);
- border-radius: 9px;
- box-sizing: border-box;
- z-index: 1;
- width: 100%;
- height: auto;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--action);
+  border-radius: 9px;
+  box-sizing: border-box;
+  z-index: 1; 
 }
 
 .about-text h2::before,
@@ -224,8 +227,7 @@ nav a.active::after {
   margin: 0 auto;
 }
 .hobbies-container h2{
-  font-family: var(--playfair) serif;
-  font-size: 32px;
+  font-family: var(--playfair);
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 40px;
@@ -254,7 +256,7 @@ nav a.active::after {
 
 .num {
   display: inline-block;
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-family: 'Cormorant Garamond', var(--playfair), Georgia, serif;
   color:var(--accent); 
   font-size: 20px;
   font-weight: 600;
@@ -268,15 +270,15 @@ nav a.active::after {
   font-size: 16px;
   font-weight: 400;
 
-  font-family: var(--playfair)sans-serif; 
+  font-family: var(--playfair); 
 }
 
-.hobbies-container list-auto:last-child{
+.hobbies-container,list-auto:last-child{
   width: 100%;
   margin-right: 0;
 }
 
-.hobbies-container list-auto::after{
+.hobbies-container, list-auto::after{
   content: "";
   display: block;
 }
@@ -300,7 +302,7 @@ nav a.active::after {
 }
 
 .gallery-container h2{
-  font-family: var(--playfair) serif;
+  font-family: var(--playfair);
   font-size: 32px;
   font-weight: normal;
   margin: 0 0 10px 0;
@@ -321,16 +323,6 @@ nav a.active::after {
   margin-bottom: 24px;
 }
 
-.gallery-card{
-  display: inline-block;
-  width: 31%;
-  margin-right: 3%;
-  margin-bottom: 25px;
-  border-radius: 9px;
-  overflow: hidden;
-  background-color: var(--bg);
-  box-sizing: border-box;
-}
 
 .gallery-p{
   font-size: 14px;
@@ -377,7 +369,7 @@ nav a.active::after {
 }
 
 .contacts-container h2{
-  font-family: var(--playfair) serif;
+  font-family: var(--playfair);
   font-size: 32px;
   font-weight: normal;
   margin: 0 0 10px 0;
@@ -400,7 +392,7 @@ nav a.active::after {
 }
 
 .footer-title {
-  font-family:var(--playfair) serif;
+  font-family:var(--playfair);
   font-size: 32px;
   font-weight: normal;
   margin-top: 0;
