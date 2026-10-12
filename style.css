@@ -47,22 +47,28 @@ header, nav ul, header h1 {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position:sticky;
   background-color:var(--bg); 
   padding: 20px 40px;
   border-bottom: 1px solid var(--bg-alt);
   overflow: hidden; 
   top: 0;
-
+   z-index: 10;
 }
 
 nav ul {
+  display: flex;
+  gap: 16px;
   list-style: none;
+  
 }
 
 nav li {
   display: inline-block;
-  margin-left: 16px; 
+  
 }
 
 
@@ -127,10 +133,9 @@ nav a.active::after {
 
 .about-photo {
  position: relative;
- display: inline-block;
- width: 38%;
- margin-bottom: 20px;
- margin-right: 40px;
+ width: 100%;
+ max-width: 320px;
+margin: 0 auto 40px;
 
 }
 
@@ -146,7 +151,7 @@ nav a.active::after {
 
 
 .photo-frame {
-  position: absolute;
+  position:absolute;
   top: 16px;
   left: 16px;
   width: 100%;
