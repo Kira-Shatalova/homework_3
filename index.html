@@ -8,27 +8,28 @@
     <title>Портфоліо Kira — дизайн сторінки</title>
   </head>
   <body>
-    <header>
-     <h1>Kira</h1>
+    <header class="header">
+     <h1 class="about_header">Kira</h1>
 
-      <nav>
-        <ul>
-          <li><a href="#about">Про мене </a></li>
-          <li><a href="#hobbies">Хобі</a></li>
-          <li><a href="#gallery">Галерея</a></li>
-          <li><a href="#contacts">Контакти</a></li>
+      <nav class="about_header">
+        <ul class="about_header">
+          <li class="list_link"><a  class="link-about_item"href="#about">Про мене </a></li>
+          <li class="list_link"><a  class="link-about_item"href="#hobbies">Хобі</a></li>
+          <li class="list_link"><a  class="link-about_item"href="#gallery">Галерея</a></li>
+          <li class="list_link"><a  class="link-about_item"href="#contacts">Контакти</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="about" id="about">
-        <div class="about-container">
-          <div class="about-photo">
-            <div class="photo-frame"></div>
-            <img src="img/Kira 2025.jpg" alt=" girl" />
+        <div class="about_container">
+          <div class="about_photo">
+            <div class="photo_frame"></div>
+            <img class="about_photo-img" src="img/Kira 2025.jpg" alt=" girl" />
           </div>
-          <div class="about-text">
-            <h2>Про меня</h2>
+          <div class="about_content-wrapper">
+          <div class="about_text">
+            <h2 class="hobbies_list-item">Про меня</h2>
             <p class="about_name">
              Привіт! Мене звати Кіра, і я розробниця-початківець. Мене захоплює процес створення сучасних, зручних та 
              естетичних вебсайтів.
@@ -45,16 +46,17 @@
              спортом і подорожувати — це допомагає мені знаходити нові ідеї та натхнення для проєктів.
             </p>
           </div>
-          <a href="#contacts">
+          <a href="#contacts" class="action-btn-link">
             <button class="action_button" >Надіслати мені
             </button>
             </a>
         </div>
+        </div>
       </section>
 
       <section class="hobbies" id="hobbies">
-        <div class="hobbies-container">
-          <h2>Мої хобі та захоплення</h2>
+        <div class="hobbies_container">
+          <h2 class="hobbies_list">Мої хобі та захоплення</h2>
 
           <ul class="programmer">
             <li class="list-auto">
@@ -85,8 +87,8 @@
 
       <section class="gallery" id="gallery">
         
-        <div class="gallery-container">
-        <h2>Галерея моїх робіт</h2>
+        <div class="gallery_container">
+        <h2 class="hobbies_list-link">Галерея моїх робіт</h2>
         <p class="gallery-p"> Тут представлені деякі з моїх проєктів та досягнень.</p>
 
           <figure class="gallery-card">
@@ -119,12 +121,16 @@
       </section>
 
       <section  class="contacts" id="contacts">
-        <div class="contacts-container">
-          <h2>Контакти</h2>
+        <div class="contacts_container">
+          <div class="contacts-info">
+          <h2 class="hobbies_list-link">Контакти</h2>
           <p class="list">
             Зв'яжіться зі мною за допомогою форми нижче або через соцмережі.
+             Відповідаю протягом кількох годин.
           </p>
-
+       </div>
+      
+      
           <form action="#" method="post">
             <div class="form-group">
               <label for="name">Ім'я:</label>

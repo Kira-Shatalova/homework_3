@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+*,*::before,*::after{
+  box-sizing: inherit;
+}
 
 :root{
    --bg: #faf6f0;
@@ -29,9 +32,13 @@ body {
   font-family: var(--manrope), sans-serif;
   color: var(--text);
   background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header, nav ul, header h1 {
+
+.about_header {
   margin: 0;
   padding: 0;
 }
@@ -46,7 +53,7 @@ header, nav ul, header h1 {
   margin-bottom: 24px;
 }
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,20 +66,20 @@ header {
    z-index: 10;
 }
 
-nav ul {
+.about_header {
   display: flex;
   gap: 16px;
   list-style: none;
   
 }
 
-nav li {
+.list_link {
   display: inline-block;
   
 }
 
 
-nav a {
+.link-about_item{
   display: inline-block;
   text-decoration: none;
   color:var(--ink-soft);
@@ -109,14 +116,23 @@ nav a.active::after {
  
 }
 
-.about-container {
-  max-width: var(--max-width);
+.about_container {
+  max-width: 1280;
   margin: 0 auto;
   background-color: var(--bg); 
   font-family: 'Manrope', sans-serif;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
 }
+.about_content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.about-text h2 {
+.about_text, .hobbies_list-item {
   font-family: 'Manrope', sans-serif;
   font-size: 15px;
   font-weight: 700;
@@ -131,7 +147,7 @@ nav a.active::after {
  font-weight: 700;
 }
 
-.about-photo {
+.about_photo {
  position: relative;
  width: 100%;
  max-width: 320px;
@@ -139,7 +155,7 @@ margin: 0 auto 40px;
 
 }
 
-.about-photo img {
+.about_photo-img {
  position: relative;
  z-index: 2;
  display: block;
@@ -150,7 +166,7 @@ margin: 0 auto 40px;
 }
 
 
-.photo-frame {
+.photo_frame {
   position:absolute;
   top: 16px;
   left: 16px;
@@ -162,10 +178,10 @@ margin: 0 auto 40px;
   z-index: 1; 
 }
 
-.about-text h2::before,
-.hobbies h2::before,
-.gallery h2::before,
-.contacts-container h2::before,
+.about_text .hobbies_list-item::before,
+.hobbies .hobbies_list::before,
+.gallery .hobbies_list-link::before,
+.contacts_container h2::before,
 #contacts h2::before{
   content: "";
   display: inline-block;
@@ -191,7 +207,7 @@ margin: 0 auto 40px;
 .action_button{
   background-color: var(--accent);
   height: 50px;
-  width: 100%;
+  width: 100% auto;
   font-family: var(--manrope);
   color: var(--surface);
   font-size: 24px;
@@ -204,9 +220,9 @@ margin: 0 auto 40px;
  background-color: var(--action);
 }
 
-.hobbies-container,
-.gallery-container,
-.contacts-container {
+.hobbies_container,
+.gallery_container,
+.contacts_container {
  max-width: var(--max-width);
  margin: 0 auto;
  padding: 0 20px;
@@ -219,137 +235,112 @@ margin: 0 auto 40px;
  margin: 0 auto;
 }
 
-.hobbies{
+.hobbies {
   background-color: var(--ink);
   color: var(--muted);
-  padding: 60px 20px;
+  padding: 48px 0;
+  width: 100%;
   box-sizing: border-box;
-
 }
+ 
+.hobbies *,
+.hobbies *::before,
+.hobbies *::after {
+  box-sizing: border-box;
+}
+ 
 
-.hobbies-container{
-  max-width: 900px;
+.hobbies_container {
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 16px;
 }
-.hobbies-container h2{
-  font-family: var(--playfair);
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 40px;
-  color: var(--bg);
+ 
+
+.hobbies_list {
+  font-family: var(--playfair), serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--surface)  !important;
+  margin: 0 0 24px;
+}
+ 
+
+.hobbies_list::before {
+  content: "— ";
+  display: block;
+  margin-bottom: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+ 
 }
 
-.programmer{
- list-style: none;
- padding: 0;
- margin: 0;
+.hobbies_list-item{
+  color:var(--accent);
 }
 
-.list-auto{
+.hobbies_list-link::before{
+    content: "—";
+  display: block;
+  margin-bottom: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.programmer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ 
+
+.list-auto {
+  position: relative;            
   display: block;
   width: 100%;
-  margin-right: 3%;
-  margin-bottom: 20px;
-  padding: 20px 24px;
+  margin: 0;
+  padding: 20px 20px 20px 60px;  
   background-color: var(--ink-soft);
-  border-radius: 4px;
-  box-sizing: border-box;
+  border: 1px solid rgba(var(--ink));
+  border-radius: 8px;
   font-size: 14px;
-  line-height: 1.5;
-  color:var(--muted);
+  line-height: 1.6;
+  color: var(--muted);
 }
+ 
+.card-title {
+  display: block;
+  margin-bottom: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--surface);
+}
+ 
 
 .num {
-  display: inline-block;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 28px;
+  margin: 0;
   font-family: 'Cormorant Garamond', var(--playfair), Georgia, serif;
-  color:var(--accent); 
   font-size: 20px;
   font-weight: 600;
-  margin-right: 12px; 
-  vertical-align: middle;
-}
-
-.card-title {
-  display:block;
-  color:var(--surface);
-  font-size: 16px;
-  font-weight: 400;
-
-  font-family: var(--playfair); 
-}
-
-.hobbies-container,list-auto:last-child{
-  width: 100%;
-  margin-right: 0;
-}
-
-.hobbies-container, list-auto::after{
-  content: "";
-  display: block;
-}
-
-.num{
+  line-height: 1.2;
   color: var(--accent);
-  margin-right: 6px;
-}
-
-.gallery{
-  background-color: var(--bg-alt);
-  padding: 60px 20px;
-  color: var(--muted);
-  box-sizing: border-box;
-}
-
-.gallery-container{
-  max-width: 900px;
-  margin: 0 auto;
   
-}
-
-.gallery-container h2{
-  font-family: var(--playfair);
-  font-size: 32px;
-  font-weight: normal;
-  margin: 0 0 10px 0;
-  color: var(--accent);
-}
-
-.list{
-  font-size: 14px;
-  color: var(--muted);
-  margin: 0 0 35px 0;
-  line-height: 1.5;
-}
-
-.contacts .list {
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
-
-
-.gallery-p{
-  font-size: 14px;
-  margin: 0 0 35px 0;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-.gallery-card{
-  display: inline-block;
-  width:100%;
-  height: 3%;
-  margin-right: 3%;
-  margin-left: 0;
-  margin-top: 0;
-  margin-bottom: 25px;
-  box-sizing: border-box;
-  background-color: var(--bg-alt);
-}
-
-.gallery-card:nth-child(3n) {
-  margin-right: 0;
 }
 
 .gallery-img {
@@ -373,7 +364,8 @@ margin: 0 auto 40px;
   padding: 60px 20px;
 }
 
-.contacts-container h2{
+.contacts_container,
+.hobbies_list-link{
   font-family: var(--playfair);
   font-size: 32px;
   font-weight: normal;
@@ -381,106 +373,654 @@ margin: 0 auto 40px;
   color: var(--accent);
 }
 
-
-
-
-.footer {
-  background-color: var(--ink-soft); 
-  padding: 50px 20px 30px 20px;
-  color:var(--muted);
-  box-sizing: border-box;
-}
-
-.footer-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.footer-title {
-  font-family:var(--playfair);
-  font-size: 32px;
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 24px;
-  color: var(--bg);
-}
-
-.footer-contacts {
-  font-style: normal;
-  margin-bottom: 20px;
-}
-
-.footer-link {
-  color:var(--accent);           
-  font-size: 18px;
-  text-decoration: underline;
-  display: inline-block;
-}
-
-.social-links {
-  margin-top: 20px;
-  margin-bottom: 35px;
-             
-}
-
-.social-btn {
-  display: inline-block;
-  width: 48%; 
-  padding: 16px 0;
-  background-color: var(--ink-soft); 
-  border: 1px solid var(--muted);
-  border-radius: 8px; 
-  color: var(--bg);
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-
-.copyright {
-  font-size: 13px;
+.gallery {
+  background-color: var(--bg);
   color: var(--muted);
-  margin-top: 30px;
+  padding: 48px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-form{
+.gallery *,
+.gallery *::before,
+.gallery *::after {
+  box-sizing: border-box;
+}
+
+
+.gallery_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.gallery_container,
+.hobbies_list-link {
+  font-family: var(--playfair), serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.gallery-p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 0 20px;              
   background-color: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 24px;
-  border:1px solid var(--line);
+  overflow: hidden;
 }
 
-.form-group label{
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--placeholder);
+}
+
+.gallery-card figcaption {
+  padding: 16px;
+  font-family: var(--playfair), serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: left;
+  background-color: var(--surface);
+}
+
+.gallery-card:last-child {
+  margin-bottom: 0;
+}
+
+.contacts {
+  background-color: var(--bg-alt);
+  color: var(--muted);
+  padding: 48px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contacts *,
+.contacts *::before,
+.contacts *::after {
+  box-sizing: border-box;
+}
+
+
+.contacts_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.contacts_container h2 {
+  font-family: var(--playfair), serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.contacts_container,
+.hobbies_list-link::before {
+  content: "— Контакти";
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--manrope), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contacts .list {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+.contacts-link {
   display: block;
   font-size: 14px;
+  line-height: 1.5;
+  color: var(--action);
+  text-decoration: underline;
+  margin-bottom: 8px;
+  word-break: break-word;  
+}
+
+.contacts form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
   font-weight: 700;
-  color:var(--ink-soft);
-  margin-bottom: 2px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
 }
 
 .form-group input,
-.form-group textarea{
+.form-group textarea {
   display: block;
   width: 100%;
-  background-color: var(--placeholder);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  border:1px solid var(--line);
-  font-size: 16px;
-  color:var(--ink-soft);
-  font-family: var(--manrope);
-  padding:6px 8px;
+  font-family: var(--manrope), Arial, sans-serif;
+  font-size: 16px;              
+  color: var(--ink-soft);
+  padding: 8px 12px;
+  box-sizing: border-box;        
 }
-.form-group input{
-  height: 40px;
+
+.form-group input {
+  height: 44px;
 }
-.form-group textarea{
+
+.form-group textarea {
   height: 120px;
   resize: vertical;
 }
 
-.form-group {
-  margin-bottom: 16px;
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.action_button {
+  align-self: flex-start;
+  background-color: var(--action);
+  color: var(--surface);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  font-family: var(--manrope), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action_button:hover {
+  background-color: var(--accent);
+}
+
+  .contacts-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .contacts-info {
+    width: 40%;
+    margin-bottom: 0;
+  }
+
+  .contacts form {
+    width: 55%;
+    padding: 28px;
+  }
+
+  .contacts .list {
+    font-size: 15px;
+  }
+
+  .contacts-link {
+    font-size: 15px;
+  }
+
+.footer {
+  background-color: var(--ink-soft);
+  color: var(--muted);
+  padding: 40px 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer *,
+.footer *::before,
+.footer *::after {
+  box-sizing: border-box;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-info {
+  display: flex;
   flex-direction: column;
 }
+
+.footer-title {
+  font-family: var(--playfair), serif;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--bg);
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-style: normal;           
+  margin: 0;
+}
+
+.contact-card {
+  margin: 0;
+}
+
+.footer-link {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--accent-light);
+  text-decoration: underline;
+  word-break: break-word;       
+}
+
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-social-title {
+  display: none;
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.social-btn {
+  display: block;
+  width: 48%;
+  padding: 14px 0;
+  background-color: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+.copyright {
+  margin: 32px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+  
+
+@media (min-width: 768px) {
+  .hobbies {
+    padding: 80px 0;
+  }
+ 
+  .hobbies-container {
+    padding: 0 40px;
+  }
+ 
+  .hobbies_list {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+ 
+  .programmer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    row-gap: 24px;
+  }
+ 
+  .list-auto {
+    width: 48.5%;                   
+    padding: 28px 28px 28px 80px;
+    font-size: 15px;
+  }
+ 
+  .list-auto:last-child {
+    width: 100%;                  
+  }
+ 
+  .num {
+    left: 28px;
+    top: 28px;
+    width: 40px;
+    font-size: 24px;
+  }
+ 
+  .card-title {
+    font-size: 18px;
+  }
+
+
+  .gallery,
+  .contacts {
+    padding: 80px 0;
+  }
+
+  .gallery_container,
+  .contacts_container {
+    padding: 0 40px;
+  }
+
+  .gallery_container, 
+  .hobbies_list-link,
+  .contacts_container, 
+  .hobbies_list-link {
+    font-size: 40px;
+  }
+
+  .gallery-p {
+    margin-bottom: 40px;
+  }
+
+  
+  .gallery_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .gallery_container, .hobbies_list-link,
+  .gallery-p {
+    width: 100%;
+  }
+
+  .gallery-card {
+    width: 31.5%;                
+    margin-bottom: 0;
+  }
+
+  .gallery-img {
+    height: 240px;
+  }
+
+  .gallery-card figcaption {
+    font-size: 16px;
+  }
+   .action_button {
+    width: auto;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .social-btn {
+    width: auto;
+    min-width: 140px;
+    padding: 14px 32px;
+  }
+
+  .footer {
+    padding: 56px 0 32px;
+  }
+
+  .footer-container {
+    padding: 0 40px;
+  }
+
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-title {
+    font-size: 26px;
+  }
+
+  .footer-link {
+    font-size: 15px;
+  }
+
+  .footer-social {
+    width: auto;
+    align-items: flex-end;     
+  }
+
+  .footer-social-title {
+    display: block;
+  }
+
+  .social-links {
+    width: auto;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: auto;
+    min-width: 120px;
+    padding: 12px 28px;
+  }
+
+  .copyright {
+    margin-top: 40px;
+  }
+}
+
+
+
+@media (min-width: 1024px) {
+ 
+  .header {
+    padding: 24px 60px;
+  }
+ 
+  .about_header {
+    gap: 32px;
+  }
+ 
+  .link-about_item {
+    font-size: 15px;
+  }
+ 
+  
+  .about {
+    padding: 80px 60px;
+  }
+ 
+  .about_container {
+    max-width: 1280px;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+  }
+ 
+  .about_photo {
+    flex-shrink: 0;
+    max-width: 380px;
+    margin: 0;
+  }
+ 
+  .about_name {
+    font-size: 32px;
+  }
+ 
+  .about_me {
+    font-size: 18px;
+  }
+ 
+  .hobbies_container,
+  .gallery_container,
+  .contacts_container,
+  .footer-container {
+    padding: 0 60px;
+  }
+ 
+  .hobbies,
+  .gallery,
+  .contacts {
+    padding: 96px 0;
+  }
+ 
+  .hobbies_list,
+  .gallery_container h2,
+  .contacts_container h2 {
+    font-size: 48px;
+  }
+ 
+  .programmer {
+    row-gap: 32px;
+  }
+ 
+  .list-auto {
+    padding: 32px 32px 32px 88px;
+    font-size: 16px;
+  }
+ 
+  .num {
+    left: 32px;
+    top: 32px;
+    width: 44px;
+    font-size: 28px;
+  }
+ 
+  .card-title {
+    font-size: 20px;
+  }
+ 
+  
+  .gallery-p {
+    font-size: 16px;
+  }
+ 
+  .gallery-img {
+    height: 300px;
+  }
+ 
+  .gallery-card figcaption {
+    padding: 20px;
+    font-size: 18px;
+  }
+ 
+  
+  .contacts-info {
+    width: 38%;
+  }
+ 
+  .contacts form {
+    width: 56%;
+    padding: 36px;
+  }
+ 
+  .contacts .list,
+  .contacts-link {
+    font-size: 16px;
+  }
+ 
+  .form-group label {
+    font-size: 14px;
+  }
+ 
+  .form-group input {
+    height: 48px;
+  }
+ 
+  .form-group textarea {
+    height: 140px;
+  }
+ 
+  .action_button {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+ 
+  .footer {
+    padding: 64px 0 40px;
+  }
+ 
+  .footer-title {
+    font-size: 30px;
+  }
+ 
+  .footer-link {
+    font-size: 16px;
+  }
+ 
+  .social-btn {
+    min-width: 140px;
+    padding: 14px 32px;
+  }
+ 
+  .copyright {
+    margin-top: 48px;
+  }
+}
+ 
