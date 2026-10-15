@@ -1,401 +1,1026 @@
-header {
-    background-color: #2c3e50; /* Фоновий колір */
-    color: #ffffff;            /* Колір тексту */
-    padding: 20px 40px;        /* Внутрішні відступи */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,*::before,*::after{
+  box-sizing: inherit;
+}
+
+:root{
+   --bg: #faf6f0;
+   --bg-alt:#F3EDE4;
+   --surface:#FFFFFF;
+    --placeholder:#EDE4D7;
+    --ink:#1F1B18;
+    --ink-soft:#2A2521;
+    --text:#4A423B;
+    --muted:#6B6259;
+    --accent:#C25B3E;
+    --action:#A8432A;
+    --accent-light:#E08A6B;
+    --line:#E5DCCF;
+
+    --manrope: "Manrope", Arial, sans-serif;
+    --radius: 4px;
+    --padding: 96px 80px;
+    --playfair: "Playfair Display", Georgia, serif;;
+    --max-width: 1120px;
+}
+
+body {
+  font-family: var(--manrope), sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.about_header {
+  margin: 0;
+  padding: 0;
+}
+
+.hobbies h2,
+.gallery h2,
+#contacts h2{
+  font-family: var(--playfair), sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position:sticky;
+  background-color:var(--bg); 
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--bg-alt);
+  overflow: hidden; 
+  top: 0;
+   z-index: 10;
+}
+
+.about_header {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  
+}
+
+.list_link {
+  display: inline-block;
+  
+}
+
+
+.link-about_item{
+  display: inline-block;
+  text-decoration: none;
+  color:var(--ink-soft);
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 6px;
+  position: relative;
+
+}
+
+
+nav a:hover,
+nav a:active,
+nav a.active {
+  color: var(--ink);
+}
+
+nav a:hover::after,
+nav a:active::after,
+nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color:var(--accent); 
+}
+
+
+.about {
+  width: 100%;
+  padding: 40px 20px;
+ 
+}
+
+.about_container {
+  max-width: 1280;
+  margin: 0 auto;
+  background-color: var(--bg); 
+  font-family: 'Manrope', sans-serif;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.about_content-wrapper {
+    flex: 1;
     display: flex;
-    align-items: center;
-    
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.about_text, .hobbies_list-item {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
-header h1 {
-            margin: 0;
-            flex: 1;                   /* Займає вільний простір зліва */
-        }
-
-        nav {
-            flex: 2;                   /* Отримує більше простору */
-            display: flex;
-            justify-content: center;   /* Вирівнює список посилань РІВНО ПО ЦЕНТРУ */
-        }
-/* 2. Стилі для списку навігації (вибудовуємо в рядок) */
-nav ul {
-   
-    list-style: none;          /* Прибираємо крапки */
-            margin: 0;
-            padding: 0;
-            display: flex;             /* Робимо посилання в один рядок */
-            gap: 25px;
+.about_name{
+ color: var(--ink);
+ font-size: 23px;
+ font-weight: 700;
 }
 
-/* 3. Стилі для посилань */
-nav a {
-    color: #ffffff;          /* Колір посилань */
-    text-decoration: none;   /* Прибираємо підкреслення */
+.about_photo {
+ position: relative;
+ width: 100%;
+ max-width: 320px;
+margin: 0 auto 40px;
+
+}
+
+.about_photo-img {
+ position: relative;
+ z-index: 2;
+ display: block;
+ width: 100%;
+ height: 100%;
+ border-radius: 9px;
+  
+}
+
+
+.photo_frame {
+  position:absolute;
+  top: 16px;
+  left: 16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--action);
+  border-radius: 9px;
+  box-sizing: border-box;
+  z-index: 1; 
+}
+
+.about_text .hobbies_list-item::before,
+.hobbies .hobbies_list::before,
+.gallery .hobbies_list-link::before,
+.contacts_container h2::before,
+#contacts h2::before{
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--action);
+  margin-right: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  
+}
+
+.about_me {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.action_button{
+  background-color: var(--accent);
+  height: 50px;
+  width: 100% auto;
+  font-family: var(--manrope);
+  color: var(--surface);
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius);
+}
+
+.action_button:hover{
+ background-color: var(--action);
+}
+
+.hobbies_container,
+.gallery_container,
+.contacts_container {
+ max-width: var(--max-width);
+ margin: 0 auto;
+ padding: 0 20px;
+}
+
+.about,
+.hobbies,
+.gallery,
+.contacts{
+ margin: 0 auto;
+}
+
+.hobbies {
+  background-color: var(--ink);
+  color: var(--muted);
+  padding: 48px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+ 
+.hobbies *,
+.hobbies *::before,
+.hobbies *::after {
+  box-sizing: border-box;
+}
+ 
+
+.hobbies_container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+ 
+
+.hobbies_list {
+  font-family: var(--playfair), serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--surface)  !important;
+  margin: 0 0 24px;
+}
+ 
+
+.hobbies_list::before {
+  content: "— ";
+  display: block;
+  margin-bottom: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+ 
+}
+
+.hobbies_list-item{
+  color:var(--accent);
+}
+
+.hobbies_list-link::before{
+    content: "—";
+  display: block;
+  margin-bottom: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.programmer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ 
+
+.list-auto {
+  position: relative;            
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 20px 20px 20px 60px;  
+  background-color: var(--ink-soft);
+  border: 1px solid rgba(var(--ink));
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+ 
+.card-title {
+  display: block;
+  margin-bottom: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--surface);
+}
+ 
+
+.num {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 28px;
+  margin: 0;
+  font-family: 'Cormorant Garamond', var(--playfair), Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--accent);
+  
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;     
+  display: block;
+}
+
+.gallery-card figcaption {
+  background-color: var(--bg);
+  padding: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color:var(--ink);
+  text-align: left;
+}
+
+.contacts{
+  background-color:var(--placeholder);
+  padding: 60px 20px;
+}
+
+.contacts_container,
+.hobbies_list-link{
+  font-family: var(--playfair);
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  color: var(--accent);
+}
+
+.gallery {
+  background-color: var(--bg);
+  color: var(--muted);
+  padding: 48px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gallery *,
+.gallery *::before,
+.gallery *::after {
+  box-sizing: border-box;
+}
+
+
+.gallery_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.gallery_container,
+.hobbies_list-link {
+  font-family: var(--playfair), serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.gallery-p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 0 20px;              
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--placeholder);
+}
+
+.gallery-card figcaption {
+  padding: 16px;
+  font-family: var(--playfair), serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: left;
+  background-color: var(--surface);
+}
+
+.gallery-card:last-child {
+  margin-bottom: 0;
+}
+
+.contacts {
+  background-color: var(--bg-alt);
+  color: var(--muted);
+  padding: 48px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contacts *,
+.contacts *::before,
+.contacts *::after {
+  box-sizing: border-box;
+}
+
+
+.contacts_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.contacts_container h2 {
+  font-family: var(--playfair), serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.contacts_container,
+.hobbies_list-link::before {
+  content: "— Контакти";
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--manrope), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contacts .list {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+.contacts-link {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--action);
+  text-decoration: underline;
+  margin-bottom: 8px;
+  word-break: break-word;  
+}
+
+.contacts form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--manrope), Arial, sans-serif;
+  font-size: 16px;              
+  color: var(--ink-soft);
+  padding: 8px 12px;
+  box-sizing: border-box;        
+}
+
+.form-group input {
+  height: 44px;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.action_button {
+  align-self: flex-start;
+  background-color: var(--action);
+  color: var(--surface);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  font-family: var(--manrope), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action_button:hover {
+  background-color: var(--accent);
+}
+
+  .contacts-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .contacts-info {
+    width: 40%;
+    margin-bottom: 0;
+  }
+
+  .contacts form {
+    width: 55%;
+    padding: 28px;
+  }
+
+  .contacts .list {
+    font-size: 15px;
+  }
+
+  .contacts-link {
+    font-size: 15px;
+  }
+
+.footer {
+  background-color: var(--ink-soft);
+  color: var(--muted);
+  padding: 40px 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer *,
+.footer *::before,
+.footer *::after {
+  box-sizing: border-box;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-family: var(--playfair), serif;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--bg);
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-style: normal;           
+  margin: 0;
+}
+
+.contact-card {
+  margin: 0;
+}
+
+.footer-link {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--accent-light);
+  text-decoration: underline;
+  word-break: break-word;       
+}
+
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-social-title {
+  display: none;
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.social-btn {
+  display: block;
+  width: 48%;
+  padding: 14px 0;
+  background-color: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+.copyright {
+  margin: 32px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+  
+
+@media (min-width: 768px) {
+  .hobbies {
+    padding: 80px 0;
+  }
+ 
+  .hobbies-container {
+    padding: 0 40px;
+  }
+ 
+  .hobbies_list {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+ 
+  .programmer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    row-gap: 24px;
+  }
+ 
+  .list-auto {
+    width: 48.5%;                   
+    padding: 28px 28px 28px 80px;
+    font-size: 15px;
+  }
+ 
+  .list-auto:last-child {
+    width: 100%;                  
+  }
+ 
+  .num {
+    left: 28px;
+    top: 28px;
+    width: 40px;
+    font-size: 24px;
+  }
+ 
+  .card-title {
     font-size: 18px;
-    transition: color 0.3s;
+  }
+
+
+  .gallery,
+  .contacts {
+    padding: 80px 0;
+  }
+
+  .gallery_container,
+  .contacts_container {
+    padding: 0 40px;
+  }
+
+  .gallery_container, 
+  .hobbies_list-link,
+  .contacts_container, 
+  .hobbies_list-link {
+    font-size: 40px;
+  }
+
+  .gallery-p {
+    margin-bottom: 40px;
+  }
+
+  
+  .gallery_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .gallery_container, .hobbies_list-link,
+  .gallery-p {
+    width: 100%;
+  }
+
+  .gallery-card {
+    width: 31.5%;                
+    margin-bottom: 0;
+  }
+
+  .gallery-img {
+    height: 240px;
+  }
+
+  .gallery-card figcaption {
+    font-size: 16px;
+  }
+   .action_button {
+    width: auto;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .social-btn {
+    width: auto;
+    min-width: 140px;
+    padding: 14px 32px;
+  }
+
+  .footer {
+    padding: 56px 0 32px;
+  }
+
+  .footer-container {
+    padding: 0 40px;
+  }
+
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-title {
+    font-size: 26px;
+  }
+
+  .footer-link {
+    font-size: 15px;
+  }
+
+  .footer-social {
+    width: auto;
+    align-items: flex-end;     
+  }
+
+  .footer-social-title {
+    display: block;
+  }
+
+  .social-links {
+    width: auto;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: auto;
+    min-width: 120px;
+    padding: 12px 28px;
+  }
+
+  .copyright {
+    margin-top: 40px;
+  }
 }
 
-/* Ефект при наведенні курсора */
-nav a:hover {
-    color: #f39c12;          /* Акцентний колір при наведенні */
+
+
+@media (min-width: 1024px) {
+ 
+  .header {
+    padding: 24px 60px;
+  }
+ 
+  .about_header {
+    gap: 32px;
+  }
+ 
+  .link-about_item {
+    font-size: 15px;
+  }
+ 
+  
+  .about {
+    padding: 80px 60px;
+  }
+ 
+  .about_container {
+    max-width: 1280px;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+  }
+ 
+  .about_photo {
+    flex-shrink: 0;
+    max-width: 380px;
+    margin: 0;
+  }
+ 
+  .about_name {
+    font-size: 32px;
+  }
+ 
+  .about_me {
+    font-size: 18px;
+  }
+ 
+  .hobbies_container,
+  .gallery_container,
+  .contacts_container,
+  .footer-container {
+    padding: 0 60px;
+  }
+ 
+  .hobbies,
+  .gallery,
+  .contacts {
+    padding: 96px 0;
+  }
+ 
+  .hobbies_list,
+  .gallery_container h2,
+  .contacts_container h2 {
+    font-size: 48px;
+  }
+ 
+  .programmer {
+    row-gap: 32px;
+  }
+ 
+  .list-auto {
+    padding: 32px 32px 32px 88px;
+    font-size: 16px;
+  }
+ 
+  .num {
+    left: 32px;
+    top: 32px;
+    width: 44px;
+    font-size: 28px;
+  }
+ 
+  .card-title {
+    font-size: 20px;
+  }
+ 
+  
+  .gallery-p {
+    font-size: 16px;
+  }
+ 
+  .gallery-img {
+    height: 300px;
+  }
+ 
+  .gallery-card figcaption {
+    padding: 20px;
+    font-size: 18px;
+  }
+ 
+  
+  .contacts-info {
+    width: 38%;
+  }
+ 
+  .contacts form {
+    width: 56%;
+    padding: 36px;
+  }
+ 
+  .contacts .list,
+  .contacts-link {
+    font-size: 16px;
+  }
+ 
+  .form-group label {
+    font-size: 14px;
+  }
+ 
+  .form-group input {
+    height: 48px;
+  }
+ 
+  .form-group textarea {
+    height: 140px;
+  }
+ 
+  .action_button {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+ 
+  .footer {
+    padding: 64px 0 40px;
+  }
+ 
+  .footer-title {
+    font-size: 30px;
+  }
+ 
+  .footer-link {
+    font-size: 16px;
+  }
+ 
+  .social-btn {
+    min-width: 140px;
+    padding: 14px 32px;
+  }
+ 
+  .copyright {
+    margin-top: 48px;
+  }
 }
-
-/* Базові відступи для прикладу */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        /* Стилізація секції "Про мене" */
-        section {
-            padding: 60px 20px; /* Внутрішні відступи секції зверху/знизу та з боків */
-        }
-
-        /* Контейнер для фото та тексту */
-        .about-container {
-            max-width: 1000px;        /* Максимальна ширина контенту */
-            margin: 0 auto;           /* Вирівнюємо весь блок по центру */
-            padding: 30px;            /* Додатковий padding всередині контейнера */
-            background-color: #fff;   /* Білий фони для огартності (за бажанням) */
-            border-radius: 16px;      /* Заокруглення самого контейнера */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Легка тінь */
-            
-            display: flex;            /* Робимо фото і текст в один рядок */
-            align-items: center;      /* Вирівнюємо по вертикалі по центру */
-            gap: 40px;                /* Відстань між фото і текстом */
-        }
-
-        /* Блок з фотографією */
-        .about-photo {
-            flex-shrink: 0;           /* Забороняємо фото стискатися */
-        }
-
-        .about-photo img {
-            width: 320px;             /* Фіксована ширина фото */
-            height: 400px;            /* Висота (щоб було акуратне співвідношення сторін) */
-            object-fit: cover;        /* Кадрує картинку, щоб вона не сплющувалась */
-            border-radius: 12px;      /* Заокруглення кутів фото */
-        }
-
-        /* Текстовий блок */
-        .about-taxt {
-            flex: 1;                  /* Текст займає весь решту вільного простору */
-        }
-
-        .about-taxt h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .about-taxt p {
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 12px;
-        }
-
-        /*секции*/
-
-        /* Загальний контейнер секції */
-        .hobbies-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .hobbies-container h2 {
-            color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 28px;
-            text-align: center;
-        }
-
-        /* Стилізація самого списку */
-        .hobbies-container ul {
-            /* Змінюємо стандартні кружечки на стильні зірочки (або емодзі) */
-            list-style-type: "✦ "; 
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        /* Стилізація окремих пунктів списку */
-        .hobbies-container li {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #444444;
-            
-            /* Внутрішні та зовнішні відступи */
-            margin-bottom: 16px;        /* Відступ МІЖ пунктами */
-            padding: 12px 16px;         /* Відступи всередині плашки */
-            border-radius: 8px;         /* Скруглення кутів */
-            
-            /* Плавність для анімації при наведенні */
-            transition: all 0.3s ease;
-        }
-
-        /* Прибираємо нижній відступ у останнього елемента */
-        .hobbies-container li:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Виділення заголовка хобі */
-        .hobbies-container li strong {
-            color: #2c3e50;
-            transition: color 0.3s ease;
-        }
-
-        /* Ефект при наведенні (:hover) */
-        .hobbies-container li:hover {
-            color: #16a085;             /* Зміна кольору тексту при наведенні */
-            background-color: #f0fdf4;  /* Легкий фоновий підсвічувач */
-            transform: translateX(6px); /* Легкий зсув вправо для інтерактивності */
-            cursor: pointer;
-        }
-
-        .hobbies-container li:hover strong {
-            color: #117a65;             /* Зміна кольору жирного тексту при наведенні */
-        }
-
-        /*ГАЛЕРЕЯ */
-       .gallery {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .gallery h2 {
-            color: #2c3e50;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .gallery p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        /* Контейнер для фото (Flexbox) */
-        .gallery-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: wrap;
-            gap: 20px; /* Сучасний аналог margin між карточками */
-        }
-
-        /* Карточка з картиною (<figure>) */
-        .gallery-container figure {
-            margin: 10px; /* Завдання вимагає margin між фото */
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            padding: 15px; /* Внутрішній відступ для всієї картки */
-            max-width: 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Стилізація самих зображень (Паспарту) */
-        .gallery-container img {
-            width: 280px;            /* Однакова ширина для всіх зображень */
-            height: 200px;           /* Фіксована висота для однакового розміру */
-            object-fit: cover;       /* Кадрування без спотворення пропорцій */
-            
-            /* Ефект паспарту (рамки): */
-            padding: 10px;           /* Відступ між картинкою і рамкою */
-            background-color: #fff;  /* Біле поле паспарту */
-            border: 2px solid #ddd;  /* Зовнішня рамка */
-            border-radius: 4px;
-            
-            box-sizing: border-box;  /* Включає padding і border у загальну ширину 280px */
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        /* Ефект при наведенні мишкою */
-        .gallery-container figure:hover img {
-            transform: scale(1.03);  /* Легке збільшення */
-            border-color: #f39c12;   /* Зміна кольору рамки */
-        }
-
-        /* Підпис до фото */
-        figcaption {
-            margin-top: 12px;
-            font-size: 15px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        /*коетент */
-        /* Контейнер секції "Контакти" */
-        .contacts-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .contacts-container h2 {
-            color: #2c3e50;
-            font-size: 28px;
-            margin-top: 0;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .contacts-container p {
-            color: #666666;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* Група полів форми */
-        .form-group {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Стилізація підписів (label) */
-        .form-group label {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-
-        /* Стилізація полів введення (input, textarea) */
-        .form-group input,
-        .form-group textarea {
-            width: 100%;             /* Ширина на всю доступну ширину контейнера */
-            padding: 12px 16px;      /* Внутрішні відступи для зручного введення */
-            border: 1px solid #ccc;  /* Рамка */
-            border-radius: 8px;      /* Заокруглення кутів */
-            font-size: 16px;
-            color: #333333;
-            box-sizing: border-box;  /*Включає padding і border в загальну ширину 100% */
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Ефект підсвічування при фокусі на полі */
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #2c3e50;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.15);
-        }
-
-        /* Забороняємо змінювати ширину текстового поля, залишаючи можливість змінювати висоту */
-        .form-group textarea {
-            resize: vertical;
-        }
-
-        /* Стилізація кнопки */
-        button[type="submit"] {
-            width: 100%;             /* Кнопка на всю ширину форми */
-            background-color: #2c3e50; /* Фоновий колір */
-            color: #ffffff;          /* Колір тексту */
-            padding: 14px 20px;      /* Внутрішні відступи */
-            border: none;            /* Прибираємо стандартну рамку кнопки */
-            border-radius: 8px;      /* Заокруглення кутів */
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;         /* Вказівник миші у вигляді рукавички */
-            transition: background-color 0.3s ease, transform 0.1s ease;
-        }
-
-        /* Ефект при наведенні на кнопку (:hover) */
-        button[type="submit"]:hover {
-            background-color: #f39c12; /* Зміна фонового кольору при наведенні */
-        }
-
-        /* Легкий ефект натискання */
-        button[type="submit"]:active {
-            transform: scale(0.99);
-        }
-
-        /*footer*/
-
-        footer {
-            background-color: #2c3e50; /* Фоновий колір */
-            color: #ffffff;            /* Колір основного тексту */
-            padding: 40px 20px;        /* Внутрішні відступи (згори/знизу 40px, з боків 20px) */
-            text-align: center;        /* Вирівнювання всього тексту по центру */
-            margin-top: 50px;
-        }
-
-        /* Контейнер для обмеження ширини */
-        .footer-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Прибираємо курсив у тега address */
-        footer address {
-            font-style: normal;
-            margin-bottom: 20px;
-        }
-
-        footer address p {
-            margin: 8px 0;
-            font-size: 15px;
-        }
-
-        /* Блок соцмереж */
-        .social-links {
-            margin-bottom: 25px;
-        }
-
-        .social-links p {
-            margin-bottom: 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* Загальна стилізація ВСІХ посилань у футері */
-        footer a {
-            color: #f39c12;            /* Яскравий та контрастний колір посилань */
-            text-decoration: none;     /* Прибираємо стандартне підкреслення */
-            font-weight: bold;
-            transition: color 0.3s ease, text-decoration 0.3s ease;
-        }
-
-        /* Стилізація конкретно посилань на соцмережі */
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;            /* Відступи між посиланнями соцмереж */
-            padding: 6px 14px;
-            border: 1px solid #f39c12; /* Акуратна рамка навколо кнопок соцмереж */
-            border-radius: 6px;
-        }
-
-        /* Ефект :hover при наведенні мишкою на посилання */
-        footer a:hover {
-            color: #ffffff;            /* Колір змінюється на білий */
-            text-decoration: underline;/* З'являється підкреслення */
-        }
-
-        .social-links a:hover {
-            background-color: #f39c12; /* Кнопки соцмереж зафарбовуються при наведенні */
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        /* Текст про захист прав */
-        .copyright {
-            font-size: 14px;
-            color: #bdc3c7;            /* Трохи м'якший сірий колір для копирайту */
-            margin-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-        }
+ 
