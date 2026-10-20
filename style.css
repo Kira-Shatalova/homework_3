@@ -335,7 +335,7 @@ margin: 0 auto 40px;
   
 }
 
-.gallery-img {
+.gallery_img {
   width: 100%;
   height: 200px;
   object-fit: cover;     
@@ -387,7 +387,7 @@ margin: 0 auto 40px;
   margin: 0 0 10px;
 }
 
-.gallery-p {
+.gallery_p {
   font-size: 14px;
   line-height: 1.5;
   color: var(--muted);
@@ -395,7 +395,7 @@ margin: 0 auto 40px;
 }
 
 
-.gallery-card {
+.gallery_card {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -406,7 +406,7 @@ margin: 0 auto 40px;
   overflow: hidden;
 }
 
-.gallery-img {
+.gallery_img {
   display: block;
   width: 100%;
   height: 200px;
@@ -414,7 +414,7 @@ margin: 0 auto 40px;
   background-color: var(--placeholder);
 }
 
-.gallery-card figcaption {
+.gallery_card figcaption {
   padding: 16px;
   font-family: var(--playfair), serif;
   font-size: 15px;
@@ -424,7 +424,7 @@ margin: 0 auto 40px;
   background-color: var(--surface);
 }
 
-.gallery-card:last-child {
+.gallery_card:last-child {
   margin-bottom: 0;
 }
 
@@ -707,7 +707,7 @@ margin: 0 auto 40px;
     font-size: 24px;
   }
 
-  .gallery-p {
+  .gallery_p {
     margin-bottom: 40px;
   }
 
@@ -719,20 +719,20 @@ margin: 0 auto 40px;
   }
 
   .gallery_container, .hobbies_list-link,
-  .gallery-p {
+  .gallery_p {
     width: 100%;
   }
 
-  .gallery-card {
+  .gallery_card {
     width: 31.5%;                
     margin-bottom: 0;
   }
 
-  .gallery-img {
+  .gallery_img {
     height: 240px;
   }
 
-  .gallery-card figcaption {
+  .gallery_card figcaption {
     font-size: 16px;
   }
    .action_button {
@@ -883,15 +883,15 @@ margin: 0 auto 40px;
   }
  
   
-  .gallery-p {
+  .gallery_p {
     font-size: 16px;
   }
  
-  .gallery-img {
+  .gallery_img {
     height: 300px;
   }
  
-  .gallery-card figcaption {
+  .gallery_card figcaption {
     padding: 20px;
     font-size: 18px;
   }
