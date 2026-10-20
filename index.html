@@ -46,10 +46,9 @@
              спортом і подорожувати — це допомагає мені знаходити нові ідеї та натхнення для проєктів.
             </p>
           </div>
-          <a href="#contacts" class="action-btn-link">
-            <button class="action_button" >Надіслати мені <!--кнопка не нужна ссылку сделать-->
-            </button>
-            </a>
+          
+            <a href="#contacts" class="action_button" >Надіслати мені </a>
+      
         </div>
         </div>
       </section>
@@ -59,25 +58,25 @@
           <h2 class="hobbies_list">Мої хобі та захоплення</h2>
 
           <ul class="programmer">
-            <li class="list-auto">
-              <strong class="card-title"><span class="num">01</span>Програмування:</strong> люблю створювати сайти,
+            <li class="list_auto">
+              <strong class="card_title"><span class="num">01</span>Програмування:</strong> люблю створювати сайти,
               розбиратися у веброзробці та втілювати ідеї в код.
             </li>
-            <li class=" list-auto">
-              <strong class="card-title"><span class="num">02</span>Танці:</strong> чудовий спосіб відчути ритм, виплеснути
+            <li class=" list_auto">
+              <strong class="card_title"><span class="num">02</span>Танці:</strong> чудовий спосіб відчути ритм, виплеснути
               емоції та тримати тіло в тонусі.
             </li>
-            <li class=" list-auto">
-              <strong class="card-title"><span class="num">03</span>Написання віршів:</strong> творче захоплення, де я
+            <li class=" list_auto">
+              <strong class="card_title"><span class="num">03</span>Написання віршів:</strong> творче захоплення, де я
               висловлюю свої думки та почуття у римованих рядках.
             </li>
-            <li class=" list-auto" >
-              <strong class="card-title"><span class="num">04</span>Читання поезії:</strong> шукаю натхнення у творах відомих
+            <li class=" list_auto" >
+              <strong class="card_title"><span class="num">04</span>Читання поезії:</strong> шукаю натхнення у творах відомих
               авторів.
             </li>
 
-            <li class=" list-auto">
-              <strong class="card-title"><span class="num">05</span>Слухання музики:</strong> вона завжди поруч — і під час
+            <li class=" list_auto">
+              <strong class="card_title"><span class="num">05</span>Слухання музики:</strong> вона завжди поруч — і під час
               написання коду, і під час вигадування нових віршів чи танцювальних
               рухів.
             </li>
@@ -120,54 +119,48 @@
         </div>
       </section>
 
-      <section  class="contacts" id="contacts">
-        <div class="contacts_container">
-          <div class="contacts-info">
-          <h2 class="hobbies_list-link">Контакти</h2>
-          <p class="list">
-            Зв'яжіться зі мною за допомогою форми нижче або через соцмережі.
-             Відповідаю протягом кількох годин.
-          </p>
-       </div>
-      
-      
-          <form action="#" method="post">
-            <div class="form-group">
-              <label for="name">Ім'я:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Ваше ім'я"
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="example@mail.com"
-              />
-            </div>
+      <section class="contacts" id="contacts">
+  <div class="contacts__container">
 
-            <div class="form-group">
-              <label for="message">Повідомлення:</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                placeholder="Напишіть своє повідомлення..."
-              ></textarea>
-            </div>
+    <div class="contacts__info">
+  
+      <h2 class="hobbies_list-link">Контакти</h2>
+      <p class="contacts__text">
+        Зв'яжіться зі мною за допомогою форми нижче або через соцмережі.
+        Відповідаю протягом кількох годин.
+      </p>
+      <a class="contacts__link" href="mailto:Kira.shatalovaa@gmail.com">Kira.shatalovaa@gmail.com</a>
+      <a class="contacts__link" href="tel:+380662396049">+380 (66) 239-60-49</a>
+    </div>
 
-            <button class="action_button" type="submit">Надіслати</button>
-          </form>
-        </div>
-      </section>
+    <form class="contact-form" action="#" method="post">
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="name">Ім'я</label>
+        <input class="contact-form__input" type="text" id="name" name="name"
+          required placeholder="Ваше ім'я" />
+      </div>
+
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="email">Email</label>
+        <input class="contact-form__input" type="email" id="email" name="email"
+          required placeholder="example@mail.com" />
+      </div>
+
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="message">Повідомлення</label>
+        <textarea class="contact-form__input contact-form__input--textarea"
+          id="message" name="message" rows="5" required
+          placeholder="Напишіть своє повідомлення..."></textarea>
+      </div>
+
+      <button class="action_button type="submit">
+        Надіслати
+      </button>
+    </form>
+
+  </div>
+</section>
+
     </main>
 <footer class="footer">
   <div class="footer_container">
