@@ -121,6 +121,7 @@ nav a.active::after {
     flex: 1;
     display: flex;
     flex-direction: column;
+    
     align-items: flex-start;
   }
 
@@ -468,6 +469,9 @@ margin: 0 auto 40px;
   font-family: var(--manrope), Arial, sans-serif;
   font-size: 14px;
   font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+
   cursor: pointer;
 }
 
@@ -737,7 +741,10 @@ margin: 0 auto 40px;
   }
    .action_button {
     width: auto;
+    
+
   }
+ 
 
   .social-links {
     justify-content: flex-start;
